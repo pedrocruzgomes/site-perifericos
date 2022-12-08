@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="{% static 'perifericos/css/index.css' %}">
 
-    <title>Eletrônicos</title>
+    <title>Periféricos</title>
 </head>
 <body>
     <!-- Menu -->
@@ -26,23 +26,22 @@
                     <button type="button" class="btn-drop">Periféricos</button>
                     <div class="drop-content">
                         <a href="{% url 'teclados' %}">Teclados</a>
-                        <a href="{% url 'perifericos' %}">Mouses</a>
-                        <a href="{% url 'perifericos' %}">Headsets</a>
-                        <a href="{% url 'perifericos' %}">Mouse Pads</a>
-                        <a href="{% url 'perifericos' %}">Monitores</a>
+                        <a href="{% url 'mouses' %}">Mouses</a>
+                        <a href="{% url 'headsets' %}">Headsets</a>
+                        <a href="{% url 'mousepads' %}">Mouse Pads</a>
+                        <a href="{% url 'monitores' %}">Monitores</a>
                     </div>
                 </div>
                 <!--Fim Dropdown-->
-                <li><a href="{% url 'carrinho' %}">Carrinho</a></li>
+                <li><a href="{% url 'carrinho' %}" title="Carrinho">Carrinho</a></li>
                 {% if request.session.cliente %}
                 <li class="nav-item active ">
-                    <a class="nav-link" href="/ordens">Ordens</a>
+                    <a class="nav-link" href="{% url 'pedidos' %}">Meus Pedidos</a>
                 </li>
                 <li class="nav-item active ">
                     <a class="nav-link" href="/logout">Logout</a>
                 </li>   
                 {% else %}
-       
                 <li><a href="/login">Entrar</a></li>
                 <li><a href="/signup">Cadastre-se</a></li>
                 {% endif %}
@@ -53,7 +52,7 @@
     {% endblock content %}
     <!-- Rodapé -->
     <footer>
-        <p>Eletrônicos &copy; 2022</p>
+        <p>Periféricos &copy; 2022</p>
     </footer>
 </body>
 </html>

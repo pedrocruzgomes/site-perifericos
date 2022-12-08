@@ -1,0 +1,38 @@
+.container{
+    background-color: #eee;
+    min-height: 60vh;
+    padding: 50px;
+}
+.container-produtos{
+    max-width: 1500px;
+    margin: 0 auto;
+}
+.card{
+    width: 17%;
+    display: inline-block;
+    margin: 1% 1%;
+    padding: 15px;
+    background-color: rgb(230, 230, 230);
+}
+.produto{
+    height: 250px;
+    width: 100%;
+    margin-bottom: 10px;
+    background-position: center;
+    background-size: cover;
+}
+#img-1{
+    background-image: url('../img/headset.png');
+}
+#img-2{
+    background-image: url('../img/headset.png');
+}
+#img-3{
+    background-image: url('../img/headset.png');
+}
+#img-4{
+    background-image: url('../img/headset.png');
+}
+#img-5{
+    background-image: url('../img/headset.png');
+}

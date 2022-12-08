@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.contrib.auth.hashers import check_password, make_password
-from .models import Cliente
+from .models import Cliente, Produtos, Categoria
 from django.views import View
 from django.views.generic import TemplateView
 
@@ -12,12 +12,28 @@ class CarrinhoView(TemplateView):
     template_name = 'main/carrinho.html'
 
 
-class PerifericosView(TemplateView):
-    template_name = 'main/perifericos.html'
-
-
 class TecladosView(TemplateView):
     template_name = 'main/teclados.html'
+
+
+class MousesView(TemplateView):
+    template_name = 'main/mouses.html'
+
+
+class HeadsetsView(TemplateView):
+    template_name = 'main/headsets.html'
+
+
+class MousepadsView(TemplateView):
+    template_name = 'main/mousepads.html'
+
+
+class MonitoresView(TemplateView):
+    template_name = 'main/monitores.html'
+
+
+class PedidosView(TemplateView):
+    template_name = 'main/pedidos.html'
 
 
 class Login(View):
@@ -87,7 +103,7 @@ class Signup (View):
             print(nome, sobrenome, telefone, email, senha)
             cliente.senha = make_password(cliente.senha)
             cliente.registrar()
-            return redirect('home')
+            return redirect('login')
         else:
             data = {
                 'error': error_message,
