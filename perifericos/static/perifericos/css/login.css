@@ -1,0 +1,62 @@
+.container-login{
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-login{
+    width: 30vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #eee;
+}
+.text-login{
+    margin-top: 10px;
+    font-weight: 800;
+}
+.text-erro{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.formulario{
+    width: 80%;
+    font-weight: bold;
+}
+.form-control{
+    width: 100%;
+    border: none;
+    padding: 15px;
+    background-color: white;
+}
+.form-email{
+    margin-bottom: 20px;
+}
+.form-senha{
+    margin-bottom: 20px;
+}
+.btn-login{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    font-weight: 800;
+    background-color: rgb(168, 167, 167);
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.texto-ajuda{
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+.btn-redirect{
+    text-decoration: none;
+    color: black;
+    margin-top: 5px;
+}

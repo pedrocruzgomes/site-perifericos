@@ -1,0 +1,52 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'perifericos/css/signup.css' %}">
+<div class="container-signup">
+    <div class="img-signup">
+        <img src="../../static/perifericos/img/signup.png" alt="img_signup" style="height: 550px;">
+    </div>
+    <div class="card-signup">
+        <h4>Cadastre uma conta em nosso site para aproveitar o melhor!</h4>
+        <p>Informe os dados solicitados abaixo para criar uma conta</p>
+        <h3 class="text-signup">CRIE UMA CONTA</h3>
+        <form class="formulario" action="/signup" method="POST">
+            {% csrf_token %}
+            {% if error%}
+            <div class="text-erro" role="alert">
+                {{error}}
+            </div>
+            {% endif %}
+            <!-- nome -->
+            <div class="form-nome">
+                <label class="text-label">Nome</label>
+                <input type="text" name="nome" value="{{values.nome}}" class="form-control">
+            </div>
+            <!-- sobrenome -->
+            <div class="form-sobrenome">
+                <label class="text-label">Sobrenome</label>
+                <input type="text" name="sobrenome" value="{{values.sobrenome}}" class="form-control">
+            </div>
+            <!-- telefone -->
+            <div class="form-telefone">
+                <label class="text-label">Telefone</label>
+                <input type="text" name="telefone" value="{{values.telefone}}" class="form-control" placeholder="99876543210">
+            </div>
+            <!-- email -->
+            <div class="form-email">
+                <label class="text-label">Email</label>
+                <input required type="email" name="email" value="{{values.email}}" class="form-control" placeholder="email123@gmail.com">
+            </div>
+            <!-- senha -->
+            <div class="form-senha">
+                <label class="text-label">Senha</label>
+                <input type="password" name="senha" class="form-control">
+            </div>
+            <button type="submit" class="btn-signup">CADASTRAR</button>
+        </form>
+        <p class="texto-ajuda">Já possui conta?
+            <a href="{%  url 'login' %}" class="btn-redirect">Entrar</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

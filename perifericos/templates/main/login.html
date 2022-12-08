@@ -1,0 +1,37 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'perifericos/css/login.css' %}">
+<div class="container-login">
+    <div class="img-login">
+        <img src="../../static/perifericos/img/login.png" alt="img_login" style="height: 400px;">
+    </div>
+    <div class="card-login">
+        <h4>Já tem uma conta em nosso site?</h4>
+        <p>Informe os seus dados para acessá-la</p>
+        <h3 class="text-login">LOGIN</h3>
+        <form class="formulario" action="/login" method="POST">
+            {% csrf_token %}
+            {% if error%}
+            <div class="text-erro" role="alert">
+                {{error}}
+            </div>
+            {% endif %}
+            <!-- email -->
+            <div class="form-email">
+                <label class="text-label">Email</label>
+                <input required type="email" name="email" value="{{values.email}}" class="form-control" placeholder="email123@gmail.com">
+            </div>
+            <!-- senha -->
+            <div class="form-senha">
+                <label class="text-label">Senha</label>
+                <input type="password" name="senha" class="form-control">
+            </div>
+            <button type="submit" class="btn-login">LOGIN</button>
+        </form>
+        <p class="texto-ajuda">Não possui conta?
+            <a href="{%  url 'signup' %}" class="btn-redirect">Cadastre-se</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

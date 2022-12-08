@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'perifericos/css/index.css' %}">
+
+    <title>Eletrônicos</title>
+</head>
+<body>
+    <!-- Menu -->
+    <header>
+        <nav>
+            <ul>
+                <a href="{% url 'home' %}"><img src="../../static/perifericos/img/logo.png" width="50px" alt="logo"></a>
+                <div class="busca">
+                    <form method="GET">
+                        <input class="filtro" type="text" name="nome" placeholder="Pesquise o seu produto"/>
+                    </form>
+                </div>
+                <!--Dropdown-->
+                <div class="menu-drop">
+                    <button type="button" class="btn-drop">Periféricos</button>
+                    <div class="drop-content">
+                        <a href="{% url 'teclados' %}">Teclados</a>
+                        <a href="{% url 'perifericos' %}">Mouses</a>
+                        <a href="{% url 'perifericos' %}">Headsets</a>
+                        <a href="{% url 'perifericos' %}">Mouse Pads</a>
+                        <a href="{% url 'perifericos' %}">Monitores</a>
+                    </div>
+                </div>
+                <!--Fim Dropdown-->
+                <li><a href="{% url 'carrinho' %}">Carrinho</a></li>
+                {% if request.session.cliente %}
+                <li class="nav-item active ">
+                    <a class="nav-link" href="/ordens">Ordens</a>
+                </li>
+                <li class="nav-item active ">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>   
+                {% else %}
+       
+                <li><a href="/login">Entrar</a></li>
+                <li><a href="/signup">Cadastre-se</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock content %}
+    <!-- Rodapé -->
+    <footer>
+        <p>Eletrônicos &copy; 2022</p>
+    </footer>
+</body>
+</html>
