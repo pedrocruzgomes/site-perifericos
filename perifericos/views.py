@@ -1,15 +1,11 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.contrib.auth.hashers import check_password, make_password
-from .models import Cliente, Produtos, Categoria
+from .models import Cliente
 from django.views import View
 from django.views.generic import TemplateView
 
 class HomeView(TemplateView):
     template_name = 'main/index.html'
-
-
-class CarrinhoView(TemplateView):
-    template_name = 'main/carrinho.html'
 
 
 class TecladosView(TemplateView):
@@ -30,10 +26,6 @@ class MousepadsView(TemplateView):
 
 class MonitoresView(TemplateView):
     template_name = 'main/monitores.html'
-
-
-class PedidosView(TemplateView):
-    template_name = 'main/pedidos.html'
 
 
 class Login(View):

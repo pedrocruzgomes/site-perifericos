@@ -16,30 +16,14 @@
         <nav>
             <ul>
                 <a href="{% url 'home' %}"><img src="../../static/perifericos/img/logo.png" width="50px" alt="logo"></a>
-                <div class="busca">
-                    <form method="GET">
-                        <input class="filtro" type="text" name="nome" placeholder="Pesquise o seu produto"/>
-                    </form>
-                </div>
-                <!--Dropdown-->
-                <div class="menu-drop">
-                    <button type="button" class="btn-drop">Periféricos</button>
-                    <div class="drop-content">
-                        <a href="{% url 'teclados' %}">Teclados</a>
-                        <a href="{% url 'mouses' %}">Mouses</a>
-                        <a href="{% url 'headsets' %}">Headsets</a>
-                        <a href="{% url 'mousepads' %}">Mouse Pads</a>
-                        <a href="{% url 'monitores' %}">Monitores</a>
-                    </div>
-                </div>
-                <!--Fim Dropdown-->
-                <li><a href="{% url 'carrinho' %}" title="Carrinho">Carrinho</a></li>
+                <li><a href="{% url 'teclados' %}">Teclados</a></li>
+                <li><a href="{% url 'mouses' %}">Mouses</a></li>
+                <li><a href="{% url 'headsets' %}">Headsets</a></li>
+                <li><a href="{% url 'mousepads' %}">Mouse Pads</a></li>
+                <li><a href="{% url 'monitores' %}">Monitores</a></li>
                 {% if request.session.cliente %}
-                <li class="nav-item active ">
-                    <a class="nav-link" href="{% url 'pedidos' %}">Meus Pedidos</a>
-                </li>
-                <li class="nav-item active ">
-                    <a class="nav-link" href="/logout">Logout</a>
+                <li>
+                    <a href="/logout">Logout</a>
                 </li>   
                 {% else %}
                 <li><a href="/login">Entrar</a></li>
